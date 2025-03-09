@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 ### Virus - bacteria image split
 
 import os
