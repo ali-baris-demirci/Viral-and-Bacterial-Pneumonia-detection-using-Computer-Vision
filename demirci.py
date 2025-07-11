@@ -1,7 +1,7 @@
 ### Virus - bacteria image split
 
 import os
-import shutil # not included in the report, mistake realised after submission
+import shutil
 
 # Define directories
 folders = ['chest_xray/train', 'chest_xray/val', 'chest_xray/test']
