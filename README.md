@@ -31,20 +31,37 @@ The script will create `virus` and `bacteria` folders inside each split and move
 ---
 
 ## Requirements
-- Python 3.8+
-- TensorFlow (tested with 2.x)
-- numpy, pandas, matplotlib, seaborn, scikit-learn
+This project depends on the following packages (example versions shown). You can install them with pip or use the provided `requirements.txt` for reproducibility.
 
-Suggested install (virtualenv):
+- Python 3.8+
+- tensorflow>=2.10,<3
+- numpy>=1.23
+- pandas>=1.5
+- matplotlib>=3.5
+- seaborn>=0.12
+- scikit-learn>=1.1
+
+Example (virtualenv):
 
 ```bash
 python -m venv venv
 source venv/bin/activate
 pip install --upgrade pip
-pip install tensorflow numpy pandas matplotlib seaborn scikit-learn
+pip install -r requirements.txt
 ```
 
-(You may prefer to create a `requirements.txt` for reproducibility.)
+Example `requirements.txt` content:
+
+```
+tensorflow>=2.10,<3
+numpy>=1.23
+pandas>=1.5
+matplotlib>=3.5
+seaborn>=0.12
+scikit-learn>=1.1
+```
+
+(You can fine-tune versions for your environment or GPU support.)
 
 ---
 
@@ -80,21 +97,19 @@ What the script does:
 
 ---
 
-## Possible Improvements
-- Add a CLI or config file for hyperparameters (image size, batch size, epochs, paths).
-- Add unit tests for dataset processing and generator logic.
-- Save training logs (TensorBoard) and more robust model checkpointing.
-- Explore more recent architectures or ensemble methods for better accuracy.
-
----
-
 ## License
-Include a license if you intend to share this project publicly (e.g., MIT). Add `LICENSE` file to the repo.
+This project is licensed under the MIT License — see the `LICENSE` file for the full text.
+
+MIT License (SPDX: MIT)
+
+Copyright (c) 2026 ali-baris-demirci
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ---
 
-If you'd like, I can also:
-- create a `requirements.txt` with pinned versions ✅
-- add a small CLI wrapper to configure training parameters ✅
 
-Want me to add either of those now? 🔧
