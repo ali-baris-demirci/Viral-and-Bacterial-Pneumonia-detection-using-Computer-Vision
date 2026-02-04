@@ -41,11 +41,9 @@ This project depends on the following packages (example versions shown). You can
 - seaborn>=0.12
 - scikit-learn>=1.1
 
-Example (virtualenv):
+Install via pip (example):
 
 ```bash
-python -m venv venv
-source venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
@@ -72,12 +70,30 @@ Run the main script from the repository root:
 python demirci.py
 ```
 
+**Note:** This project was developed to be run on Google Colab using Google Drive for dataset storage. In Colab, mount your Drive (for example `from google.colab import drive; drive.mount('/content/drive')`) and place the `chest_xray` directory in Drive, or set `base_dir` accordingly (e.g., `/content/drive/MyDrive/`).
+
 What the script does:
 - Creates `virus` and `bacteria` folders inside `chest_xray/train`, `chest_xray/val`, and `chest_xray/test` and moves images based on filename.
 - Builds a custom subset generator for balanced sampling.
 - Loads `ResNet50V2` (ImageNet weights), unfreezes the last 100 layers, and fine-tunes on the dataset.
 - Saves the best model to `best_model.keras` and plots training curves and a confusion matrix.
 - Prints a classification report and test accuracy.
+
+## Running on Google Colab / Google Drive
+This project was designed to be used on **Google Colab** with the dataset stored on **Google Drive**. The repository does not include the dataset (it must be obtained separately). Example Colab snippet:
+
+```python
+from google.colab import drive
+drive.mount('/content/drive')
+
+# Option 1: copy the dataset into the Colab runtime
+!cp -r /content/drive/MyDrive/path/to/chest_xray /content/
+
+# Option 2: run directly from Drive - set base_dir in demirci.py accordingly
+# base_dir = '/content/drive/MyDrive/path/to/project'
+```
+
+Make sure the dataset follows the expected `chest_xray/` layout described above and set `base_dir` appropriately when running on Colab or Drive.
 
 ---
 
